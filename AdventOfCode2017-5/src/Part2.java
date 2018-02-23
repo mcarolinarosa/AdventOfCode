@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 import java.io.*;
 
-public class Part1 {
+public class Part2 {
 
     public static void main(String [ ] args) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\carolina\\Desktop\\AdventOfCode\\AdventOfCode2017-5\\src\\file.txt"));
@@ -18,7 +18,13 @@ public class Part1 {
         }
         while (cenas < jumps.size()){
             int val=jumps.get(cenas);
-            jumps.set(cenas,val+1);
+            if (val>=3){
+                jumps.set(cenas,val-1);
+
+            }
+            else{
+                jumps.set(cenas,val+1);
+            }
             cenas=cenas+val;
 
             count++;
